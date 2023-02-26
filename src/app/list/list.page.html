@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      List
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menuId="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="none" *ngFor = "let product of products">
+    <ion-item href detail  [routerLink]="['/prod-detail']">
+        <ion-thumbnail class="ion-margin-end" >
+        <ion-img class="img" src="{{ product?.image?.src !== undefined ? product?.image?.src : product?.image }}"></ion-img>
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">{{ product?.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

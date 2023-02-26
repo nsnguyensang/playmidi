@@ -1,0 +1,17 @@
+ion-content {
+    --background: #fff;
+    ion-list{
+        background: #fff;
+    }
+    ion-item {
+        --background: #fff;
+        border-bottom: 1px solid #000000;
+    }
+    .ion-margin-end {
+        margin: 8px;
+    }
+    .ion-text-wrap {
+        color: #000000;
+        font-size: 20px;
+    }
+}

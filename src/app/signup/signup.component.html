@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="header">
+    <h3>Hello to see you</h3>
+    <h1>Create a<br> New account</h1>
+  </div>
+  <!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"> -->
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form">
+        <!-- <ion-input type="text" id="email" [(ngModel)]="email" name="email"></ion-input>
+        <ion-input type="password" id="passwd" [(ngModel)]="passwd" name="passwd"></ion-input> -->
+        <ion-input type="email" formControlName="email" placeholder="Email" required></ion-input>
+        <ion-input type="text" formControlName="username" placeholder="Username" required></ion-input>
+        <ion-input type="password" formControlName="password" placeholder="Password" required></ion-input>
+    </div>
+    <div class="button signup" >
+      <button type="submit" class="btn btn-success">
+        Signup
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
+    </div>
+  </form>
+  <div class="footer signup-footer">
+    <h3 [routerLink]="['/loginForm']">Already have an account? <span>Login</span></h3>
+  </div>
+</ion-content>

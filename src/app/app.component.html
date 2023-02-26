@@ -1,0 +1,50 @@
+<ion-app>
+  <ion-menu menuId="main-menu" content-id="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/loginForm']" routerLinkActive="router-link-active">
+            <ion-icon name="log-in-outline" slot="start"></ion-icon>
+            <ion-label>Login</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/home']" routerLinkActive="router-link-active">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/play']" routerLinkActive="router-link-active">
+            <ion-icon name="musical-note-outline" slot="start"></ion-icon>
+            <ion-label>Play</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/list']" routerLinkActive="router-link-active">
+            <ion-icon name="list-outline" slot="start"></ion-icon>
+            <ion-label>List</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>    
+        <ion-item [routerLink]="['/lession']" routerLinkActive="router-link-active">
+          <ion-icon name="albums-outline" slot="start"></ion-icon>
+          <ion-label>Lession</ion-label>
+        </ion-item>
+       </ion-menu-toggle>
+       <ion-menu-toggle>    
+        <ion-item (click)="logout()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Logout</ion-label>
+        </ion-item>
+       </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,18 @@
+.content {
+    padding: 4px;
+    text-align: center;
+  }
+   .row {
+      color: #000000;
+   }
+  .selected {
+     background-color: #513410;
+     font-weight: bold;
+  }
+  
+  #play-btn {
+     margin-right: 10px;
+  }
+  
+  
+  

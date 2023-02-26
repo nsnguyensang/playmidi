@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ProdDetail</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menuId="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngFor = "let product of products">
+  <div class="container">
+      <ion-img class="img" src="{{ product?.image?.src !== undefined ? product?.image?.src : product?.image }}">{{ product?.image }}</ion-img>
+      <div class="tab">
+        <div class="title">
+            <ion-label>{{ product?.name}}</ion-label>
+        </div>
+        <div *ngIf="product.product_id === 0;else productExist">
+          <a> {{ product?.note }} </a>
+        </div>
+        <ng-template #productExist>
+          <a  href="{{ product?.download_link[0].file }}"> <ion-icon name="download-outline"></ion-icon> Download PDF</a>
+          <a  href="{{ product?.download_link[0].file }}"> <ion-icon name="download-outline"></ion-icon> Download MIDI</a>
+          <ion-item href play-midi  [routerLink]="['/play-midi']">
+            <a  > <ion-icon name="caret-forward-outline"></ion-icon>Play</a>
+          </ion-item>
+        </ng-template>
+      </div>
+  </div>
+</ion-content>

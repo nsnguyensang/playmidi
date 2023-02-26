@@ -1,0 +1,31 @@
+ion-content {
+    --background:#fff; 
+.container {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 14px;
+    display: flex;
+   
+  }
+.title {
+    margin-bottom: 15px;
+    color: #000000;
+    ion-label {
+        font-size: 16px;
+    }
+}
+a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #000000;
+}
+.img {
+    width: 80px;
+    border-radius: 8px;
+}
+.tab {
+    margin-left: 8px;
+     border-bottom: 1px splid #000000;
+}
+}

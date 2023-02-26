@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Play</ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button menuId="main-menu"></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="container">
+  <div id="side-content">
+    <div class="panel">
+      <play-control [title]="title" [mode]="mode" (modeSelected)="handleModeSelected($event)"></play-control>
+    </div>
+    <div class="panel">
+      <ng-container *ngIf="(mode == PianoMode.Play)" >
+         <note-info></note-info>
+      </ng-container>
+      <ng-container *ngIf="(mode == PianoMode.Quiz)" >
+         <quiz-info
+            [status]="quizStatus"
+            [correct]="quizCorrect"
+            [incorrect]="quizIncorrect"
+            [total]="quizLength"
+            [description]="resultDescription"
+            (buttonClicked)="handleButtonClicked($event)">
+         </quiz-info>
+      </ng-container>
+    </div>
+  </div>
+  <div id="notation-component">
+    <notation [mode]="mode"></notation>
+  </div>
+  <div class="micro">
+     <ion-chip id="start-button" color="dark" [color]="hasStarted && 'success' || 'dark'" [outline]="true">
+    <ion-icon id="micro-icon" name="mic-outline" color="dark" [color]="hasStarted && 'success' || 'dark'"  (click)="registerInput()"></ion-icon>
+  </ion-chip>
+  </div>
+ 
+  <div id="keyboard-component">
+    <keyboard (keyPlayed)="handleKeyPlayed($event)"></keyboard>
+  </div>
+  <br/>
+  <div>
+    <!-- <ion-label color="dark" class="note">{{ noteName }}</ion-label>
+    <br/>
+    <ion-label class="note-warning" disabled>{{ displayFrequency }} HZ</ion-label> -->
+  </div>
+</div>
+
+</ion-content>
+
